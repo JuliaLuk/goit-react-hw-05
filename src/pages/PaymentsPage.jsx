@@ -18,7 +18,7 @@ export default function PaymentsPage() {
     <div>
       <h1>Payments</h1>
 
-      {payments > 0 && (
+      {payments.length > 0 && (
         <ul>
           {payments.map((payment) => (
             <li key={payment.id}>
