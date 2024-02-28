@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
 import { getPayments } from "../api";
-import { Link } from "react-router-dom";
+import { PaymentList } from "../components/PaymentList";
+import { PageTitle } from "../components/PageTitle";
 
 export default function PaymentsPage() {
   const [payments, setPayments] = useState([]);
@@ -28,20 +29,10 @@ export default function PaymentsPage() {
   }, []);
   return (
     <div>
-      <h1>Payments</h1>
+      <PageTitle>Payments</PageTitle>
       {error && <p>OOOOPS! ERROR!</p>}
 
-      {payments.length > 0 && (
-        <ul>
-          {payments.map((payment) => (
-            <li key={payment.id}>
-              <p>Amount: {payment.amount}</p>
-              <p>Description: {payment.description}</p>
-              <Link to={`/payments/${payment.id}`}>Details</Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      {payments.length > 0 && <PaymentList payments={payments} />}
     </div>
   );
 }
