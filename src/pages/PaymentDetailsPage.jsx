@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { getPaymentsById } from "../api";
+import { PageTitle } from "../components/PageTitle";
 
 export default function PaymentDetailsPage() {
+  const location = useLocation();
+  console.log(location);
   const { paymentId } = useParams();
   const [payment, setPayment] = useState(null);
   useEffect(() => {
@@ -16,7 +19,10 @@ export default function PaymentDetailsPage() {
   }, []);
   return (
     <div>
-      <h1>PaymentDetailsPage</h1>
+      <PageTitle>Payment details</PageTitle>
+
+      <Link to={location.state ?? "/payments"}>BACK to all payments</Link>
+
       {payment && (
         <div>
           <div>
