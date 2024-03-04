@@ -2,7 +2,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { getPaymentsById } from "../api";
 import { PageTitle } from "../components/PageTitle";
-import { BackLink } from "../components/Backlink";
+import { BackLink } from "../components/BackLink";
 
 export default function PaymentDetailsPage() {
   const location = useLocation();
