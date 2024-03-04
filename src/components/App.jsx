@@ -12,6 +12,9 @@ const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 // const SubpageA = lazy(() => import("./SubpageA"));
 // const SubpageB = lazy(() => import("./SubpageB"));
 
+// const SubpageA = lazy(() => import("./SubpageA"));
+// const SubpageB = lazy(() => import("./SubpageB"));
+
 export const App = () => {
   return (
     <div>
